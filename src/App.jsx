@@ -1,21 +1,19 @@
+import { useState } from "react";
 import Greeting from "./components/Greeting";
+import UserInfo from "./components/UserInfo";
 
 function App() {
-    const name = "Samir";
-    const age = 25;
-    const city = "Sylhet";
-    const profession = "React Developer";
+    const [count, setCount] = useState(0);
 
     return (
         <div>
-            <h1>Hello, {name}!</h1>
+            <h1>My First React App</h1>
 
-            <Greeting name="Samir" profession="React Development" />
+            <h2>{count}</h2>
+            <button onClick={() => setCount(count + 1)}>Increase</button>
 
-            <p>I'm learning React.</p>
-            <p>I'm {age + 1} years old</p>
-            <p>I lived in {city}</p>
-            <p>I want to be {profession}</p>
+            <Greeting name="Samir" profession="React Developer" />
+            <UserInfo name="Virat" profession="Frontend Developer" />
         </div>
     );
 }
